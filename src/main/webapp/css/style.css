@@ -1,0 +1,414 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --yellow:#ffd300;
+    --green: #2b9348;
+}
+
+body{
+    background: #FFFFFF;
+    color: #444444;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+input, select, textarea, button{
+    padding: 10px;
+    font-size: 0.875rem;
+}
+.group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+.group label{
+    margin-bottom: 3px;
+}
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 70px;
+    background: #EAE7DC;
+    position: relative;
+}
+
+.header{
+    padding: 5px 20px;
+    background: #FFFFFF;
+    color:var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand{
+    gap: 20px;
+}
+.brand img{
+    width: 35px;
+    height: 35px;
+}
+.login input{
+    padding: 5px;
+
+}
+.login button[type=submit]{
+    padding: 5px;
+    border-radius: 0;
+    text-transform: capitalize;
+    width: fit-content;
+    height: fit-content;
+}
+.main{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+.main-menu{
+    background:var(--green);
+}
+.main-menu a{
+    width: 100%;
+    padding: 10px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EAE7DC;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid #F5F5F5;
+}
+.main-menu a:hover{
+    background: #EAE7DC;
+    color: var(--green);
+}
+.main-content{
+    padding: 20px;
+    background: #F5F5F5;
+}
+.home{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/egerton.png);
+    background-size: 600px 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FFFFFF;
+}
+.title{
+    text-align: center;
+    background: #FFFFFF;
+    color: #2b9348;
+    border-radius: 20px 20px 0 0;
+    align-items: center;
+    padding: 10px;
+    width: fit-content;
+    margin: auto auto 10px;
+}
+.section-title{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    padding: 8px;
+    color: #343340;
+}
+.section-subtitle{
+    color: #444444;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px;
+}
+form{
+    min-width: 400px;
+    max-width: 600px;
+    height: fit-content;
+    background: #FFFFFF;
+    margin: auto;
+    padding: 20px;
+}
+form[name=login]{
+    width: 400px;
+    box-shadow: 3px 3px 5px -5px #333;
+}
+
+form[name=login] button{
+    width: 100%;
+    cursor: pointer;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    vertical-align: middle;
+}
+.table caption{
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.table thead{
+    background: #343340;
+    color: #EAE7DC;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.table th, .table td{
+    border: 1px solid #EAE7DC;
+    padding: 8px;
+}
+.table tbody tr:nth-child(odd){
+    background: #FFFFFF;
+}
+.table tbody tr:nth-child(even):not(:first-child){
+    background: #EAE7DC;
+}
+.action .action-btn{
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    margin-left: 5px;
+    opacity: 0.7;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+}
+td .action{
+    text-align: center;
+}
+
+.btn-green{
+    background: green;
+    color: white;
+}
+
+.btn-blue{
+    background: blue;
+    color: white;
+}
+
+.btn-red{
+    background: red;
+    color: white;
+}
+
+.updates{
+    background: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.pending {
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+.pending > div{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-areas:
+        "id name link"
+        "id time link";
+    background: #FFFFFF;
+    box-shadow: 3px 3px 5px 0 #EAE7DC;
+    border-radius: 10px;
+}
+.pending > .critical{
+    animation: critical 0.6s 1s infinite ease-in-out
+}
+
+@keyframes critical {
+    0%{
+        background: #FFFFFF;
+    }
+    20%{
+        background: #ee7c7c;
+    }
+    40%{
+        background: #f75151;
+    }
+    60%{
+        background: #ec5757;
+    }
+    80%{
+        background: #eb7474;
+    }
+    100%{
+        background: #FFFFFF;
+    }
+}
+.pending .id{
+    grid-area: id;
+    background: var(--green);
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pending .name{
+    grid-area: name;
+    color: var(--green);
+    padding: 10px;
+}
+.pending > .critical .name{
+    color: #FFFFFF;
+}
+.pending .time{
+    grid-area: time;
+    color: #cccdd1;
+    padding: 5px;
+}
+
+.pending .link{
+    grid-area: link;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-left: 1px solid #2b9348;
+}
+
+.diagnose{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 10px;
+}
+.diagnose .table th{
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.diagnose .content{
+    background: #FFFFFF;
+    padding: 0 0 20px 0;
+}
+.content .action{
+    width: 55%;
+    display: grid;
+    gap:1px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.content button{
+    background: var(--green);
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #F5F5F5;
+}
+
+.content button:hover{
+    background: #FFFFFF;
+    color: var(--green);
+    border: 1px inset #2b9348;
+}
+#diagnose, #history{
+    padding: 20px;
+}
+#diagnose h5, #history h5{
+    font-size: large;
+    margin-bottom: 5px;
+}
+form[name=add-diagnosis]{
+    min-width: 100% !important;
+}
+
+.modal{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+}
+
+.modal > .close{
+    position: absolute;
+    top:20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #f75151;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.modal > .close:hover{
+    background: #f75151;
+    color: #FFFFFF;
+}
+
+form[name=lab-form]{
+    width: fit-content;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    margin: auto;
+}
+
+button[type=submit]{
+    background:var(--green);
+    min-width: 120px;
+    color: #FFFFFF;
+    outline: 0;
+    border: 0;
+    box-shadow: 3px 3px 5px -5px #333;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.footer{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
