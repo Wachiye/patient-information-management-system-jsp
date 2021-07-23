@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +27,17 @@
                         <a href="./patients.jsp" class="action-btn">Patient List</a>
                     </div>
                 </div>
+                <%
+                    String message = (String) request.getAttribute("message");
+                    String messageType = (String)  request.getAttribute("messageType");
+
+                    if( message != null) {
+                %>
+                <jsp:include page="patials/message-alert.jsp?">
+                    <jsp:param name="message" value="<%=message%>"/>
+                    <jsp:param name="type" value="<%=messageType%>"/>
+                </jsp:include>
+                <% } %>
                 <form action="users" method="post" name="add-patients">
                     <p class="message"></p>
                     <div class="group">

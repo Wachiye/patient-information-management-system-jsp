@@ -5,7 +5,7 @@
   Time: 11:02
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <div class="pagination">
     <span>Items:</span>
     <select name="items_per_page" id="items_per_page">

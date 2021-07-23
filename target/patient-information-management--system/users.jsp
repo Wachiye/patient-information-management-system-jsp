@@ -1,7 +1,4 @@
-<%@ page import="com.egerton.dataIO.UserIO" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.egerton.data.User" %>
-<%@ page import="java.sql.SQLException" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,21 +28,7 @@
                     </div>
                     <%@ include file="patials/pagination.jsp" %>
                 </div>
-                <%
-                    UserIO userIO = new UserIO();
-                    List<User> users = null;
-                    try {
-                        users = userIO.getAllUsers();
-                    } catch (SQLException sqlException) {
-                        sqlException.printStackTrace();
-                    }
-                    String message = request.getParameter("message");
-                    String messageType = request.getParameter("messageType");
-
-                    if( message != null) {
-                %>
-                <jsp:include page="patials/message-alert.jsp?message=<%= message%>&type=<%= messageType%>>" />
-                <% } %>
+                <jsp:include page="patials/message-alert.jsp?message=${message}&type=${messageType}" />
                 <table class="table">
                     <thead>
                         <tr>
@@ -60,16 +43,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <%
-                        for (int i = 0; i < users.size(); i++) {
-                            User user = users.get(i);
-                    %>
-                        <tr>
-                            <td><%= i %></td>
-                            <td><%= user.getFirstName() %></td>
-                            <td><%= user.getLastName() %></td>
-                            <td><%= user.getUserType() %></td>
-                            <td><%= user.getLastLogin() %></td>
+                    <tr>
+                            <td>1</td>
+                            <td>First Name</td>
+                            <td>LAST Name</td>
+                            <td>Student</td>
+                            <td>12/12/2021</td>
                             <td>12/13/2020 13:45</td>
                             <td>12/12/2020</td>
                             <td>
@@ -79,7 +58,6 @@
                                 </ul>
                             </td>
                         </tr>
-                    <% } %>
                     </tbody>
                 </table>
             </div>

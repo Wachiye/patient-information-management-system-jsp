@@ -1,0 +1,4 @@
+14|Acne|Paracetamol|D4|23|Fever|--|07/21/2021
+15|Acne|Paracetamol2|D4|23|Fever|--|07/21/2021
+16|Acne|Paracetamol3|D4|23|Fever|--|07/21/2021
+17|Acne|Paracetamol4|D4|23|Fever|--|07/21/2021

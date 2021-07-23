@@ -5,10 +5,13 @@
   Time: 23:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="utf-8" contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String username = request.getParameter("username");
+%>
 <div class="login">
-    <form method="POST" action="/auth?login">
-        <input type="text" id="username" name="username"  placeholder="Username" required/>
+    <form method="POST" action="login">
+        <input type="text" id="username" name="username" value='<%= username %>'  placeholder="Username" required/>
         <input type="password" id="password" name="password"  placeholder="Password" required/>
         <button type="submit">Login</button>
     </form>

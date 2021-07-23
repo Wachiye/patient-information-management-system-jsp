@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.egerton.data.Medicine" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +31,16 @@
                 <%@ include file="patials/pagination.jsp" %>
             </div>
             <%
-                String message = request.getParameter("message");
-                String messageType = request.getParameter("messageType");
+                String message = (String) request.getAttribute("message");
+                String messageType = (String)  request.getAttribute("messageType");
 
+                ArrayList<Medicine> medicines = (ArrayList<Medicine>) request.getAttribute("medicines");
                 if( message != null) {
             %>
-            <jsp:include page="patials/message-alert.jsp?message=<%= message%>&type=<%= messageType%>>" />
+            <jsp:include page="patials/message-alert.jsp?">
+                <jsp:param name="message" value="<%=message%>"/>
+                <jsp:param name="type" value="<%=messageType%>"/>
+            </jsp:include>
             <% } %>
             <div class="search-bar"></div>
             <table class="table">
@@ -50,6 +57,26 @@
                     </tr>
                 </thead>
                 <tbody>
+                <% if( medicines != null && medicines.size() > 0) {
+                        for (int i = 0; i < medicines.size() ; i++) {
+                            Medicine medicine = medicines.get(i);
+                %>
+                <tr>
+                    <td><%= medicine.getName()%></td>
+                    <td><%= medicine.getGenericName()%></td>
+                    <td><%= medicine.getStoreBox()%></td>
+                    <td><%= medicine.getQuantity()%></td>
+                    <td><%= medicine.getCategory()%></td>
+                    <td><%= medicine.getSideEffects()%></td>
+                    <td><%= medicine.getExpiryDate()%></td>
+                    <td>
+                        <ul class="action">
+                            <a class="action-btn btn-blue" href="?action=edit&id=<%= medicine.getId()%>">Edit</a>
+                            <a class="action-btn btn-red" href="?action=delete&id=<%= medicine.getId()%>">Delete</a>
+                        </ul>
+                    </td>
+                </tr>
+                <% }} %>
                     <tr>
                         <td>Ace</td>
                         <td>Paracetamol</td>

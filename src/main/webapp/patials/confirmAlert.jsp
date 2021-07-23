@@ -5,7 +5,7 @@
   Time: 00:22
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <div class="modal">
     <div class="alert">
         <h2 class="alert-title">This is a confirm alert</h2>

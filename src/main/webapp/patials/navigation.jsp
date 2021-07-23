@@ -5,7 +5,7 @@
   Time: 17:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%--<a href="./">Home</a>--%>
 <%--<a href="./about.jsp">About</a>--%>
 <%--<a href="./help.jsp">Help</a>--%>
@@ -24,7 +24,7 @@
 <div class="menu-group">
     Medicine
     <a href="./add-medicine.jsp">Add Medicine</a>
-    <a href="./medicine.jsp">Medicine List</a>
+    <a href="./medicines">Medicine List</a>
     <a href="./medication.jsp">Medication</a>
 </div>
 <div class="menu-group">
